@@ -1,0 +1,6 @@
+{
+    "environment": "production" ,
+    "server_status": "active",
+    "max_users": 100,
+    "features_enabled":["Logging", "monitoring"]
+}
