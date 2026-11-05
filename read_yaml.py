@@ -1,10 +1,18 @@
-import yaml
+import requests
+url = "https://api.github.com/users/pst0978"
+print("connecting to GitHub Server via API....")
+print("--------")
 
-with open('config.yaml', 'r') as file:
-    config = yaml.safe_load(file)
 
-print("--- YAML Config Loaded Successfully ---")
-print(f"App Name: {config['app_name']}")
-print(f"DB Host: {config['database']['host']}")
-print(f"DB Port: {config['database']['port']}")
-print(f"First Service: {config['services'][0]}")
+response = requests.get(url)
+
+if response.status_code == 200:
+    user_data = response.json()
+
+    print("SUCCESS: Live data fetched successfully!")
+    print(f"GitHub Username: {user_data['public_repos']}")
+    print(f"profile created at: {user_data['created_at']}")
+
+else:  
+
+    print(f"Alert: Failed to connect:Status Code: {response.status_code}") 
