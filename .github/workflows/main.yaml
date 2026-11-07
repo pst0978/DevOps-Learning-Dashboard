@@ -19,7 +19,7 @@ jobs:
 
    - name: Inatall Dependencies    
      run: |
-       pyhton -m pip inatall --upgrade pip
+       python -m pip inatall --upgrade pip
        pip install requests
 
    - name: Execute Main Python Script
