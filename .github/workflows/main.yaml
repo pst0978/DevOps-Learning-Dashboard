@@ -2,8 +2,8 @@ name: DevOps Automation Pipeline
 
 on:
   push:
-  branches:
-    - main
+    branches:
+      - main
 jobs:
   run-automation:
   runs-on: ubuntu-latest
