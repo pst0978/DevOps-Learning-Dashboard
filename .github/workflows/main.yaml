@@ -1,6 +1,6 @@
 name: DevOps Automation Pipeline
 
-on
+on:
   push:
   branches:
     - main
