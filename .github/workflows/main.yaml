@@ -8,14 +8,14 @@ jobs:
   run-automation:
   runs-on: ubuntu-latest
 
-  step:
+  steps:
    - name: Checkout Repository Code
-     uses: action/checkout@v3
+     uses: actions/checkout@v3
    
    - name: Setup Python 3.9
-     uses: actions/Setup-pyhton@v4
+     uses: actions/setup-python@v4
      with: 
-       python version 3.9
+       python-version: 3.9
 
    - name: Inatall Dependencies    
      run: |
