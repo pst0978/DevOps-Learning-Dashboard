@@ -1,0 +1,29 @@
+name: DevOps Automation Pipeline
+
+on
+  push:
+  branches:
+    - main
+jobs:
+  run-automation:
+  runs-on: ubuntu-latest
+
+  step:
+   - name: Checkout Repository Code
+     uses: action/checkout@v3
+   
+   - name: Setup Python 3.9
+     uses: actions/Setup-pyhton@v4
+     with: 
+       python version 3.9
+
+   - name: Inatall Dependencies    
+     run: |
+       pyhton -m pip inatall --upgrade pip
+       pip install requests
+
+   - name: Execute Main Python Script
+     env:
+       GITHUB_USER: 'pst0978'
+     run: python main.py 
+       
