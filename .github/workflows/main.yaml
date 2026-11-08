@@ -26,4 +26,5 @@ jobs:
       - name: Execute Main Python Script
         env:
           GITHUB_USER: 'pst0978'
+          DEV_SECRET_KEY: ${{ secrets.MY_DEVOPS_SECRET }}
         run: python main.py
